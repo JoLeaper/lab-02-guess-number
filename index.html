@@ -10,25 +10,29 @@
 </head>
 
 <body>
-    <div class = 'container'>
+    <div class='container'>
         <h1>Number Guessing!</h1>
-        <section id = 'rules'>
+        <section id='rules'>
             <h2>How To Play:</h2>
             <ul>
                 <li>I am going to think of a number between 1 and 20. It'll be your job to guess it.</li>
                 <li>You have four chances. After each guess, I'll tell you if the number I'm thinking of is higher or lower.</li>
                 <li>If you guess the number right, you win! If not, you lose!</li>
             </ul>
-            <button id = readyButton>Ready To Play?</button>
+            <button id='ready-button'>Ready To Play?</button>
         </section>
 
-        <section id = 'game'>
-            <input type="number" id="quantity" name="quantity" min="1" max="20">
+        <section id='game'>
+            I'm thinking of a number between 1 and 20, can you guess it?
+            <input type="number" id="number-guess" min="1" max="20" required></input>
+            <button id="guess-button">Guess Number</button>
+            <span id='number-of-lives'>4</span>
+            <span id='high-or-low'></span>
         </section>
 
-        <section id = 'results'>
-            <span id = 'win-or-lose'></span>
-            <button id = playAgain>Play Again?</button>
+        <section id='results'>
+            <span id='win-or-lose'></span>
+            <button id='again-button'>Play Again?</button>
         </section>
 
     <script type="module" src="app.js"></script>
