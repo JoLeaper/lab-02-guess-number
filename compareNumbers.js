@@ -1,10 +1,10 @@
 const compareNumbers = (expected, guessed) => {
     if (expected === guessed) {
-        return 'correct';
+        return 0;
     } else if (expected > guessed) {
-        return 'lower';
+        return -1;
     } else if (expected < guessed) {
-        return 'higher';
+        return 1;
     }
 };
 

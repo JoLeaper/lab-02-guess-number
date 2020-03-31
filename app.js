@@ -31,13 +31,13 @@ submitButton.addEventListener('click', () => {
     let expected = Number(numToGuess);
     console.log(guessed, expected, numLives);
     let result = compareNumbers(expected, guessed);
-    if (result === 'correct') {
+    if (result === 0) {
         gameSection.style.display = 'none';
         resultSection.style.display = 'flex';
         winOrLose.textContent = 'Congratulations, you won!';
-    } else if (result === 'higher') {
+    } else if (result === 1) {
         highOrLow.textContent = 'You need to guess lower!';
-    } else if (result === 'lower') {
+    } else if (result === -1) {
         highOrLow.textContent = 'You need to guess higher!';
     }
     numLives--;
@@ -50,7 +50,7 @@ submitButton.addEventListener('click', () => {
 });
 
 againButton.addEventListener('click', () => {
-
+    location.reload();
 });
 
 // while (numGuesses > 0) {
