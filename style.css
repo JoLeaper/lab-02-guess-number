@@ -1,0 +1,27 @@
+body {
+    background-image: url('https://s7d2.scene7.com/is/image/ritzcarlton/RCARUBA_00081_conversion?$XlargeViewport100pct$');
+}
+
+.container {
+    margin: 100px auto;
+    width: 50%;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    background: -webkit-linear-gradient(deepskyblue, lightblue);
+    border-radius: 100px 20px 100px 20px;
+    box-shadow: 2px 2px 10px 2px;
+} 
+
+
+#rules {
+    display: flex;
+}
+
+#game {
+    display: none;
+}
+
+#results {
+    display: none;
+}
