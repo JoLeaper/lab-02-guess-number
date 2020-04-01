@@ -39,6 +39,9 @@ submitButton.addEventListener('click', () => {
         highOrLow.textContent = 'You need to guess lower!';
     } else if (result === -1) {
         highOrLow.textContent = 'You need to guess higher!';
+    } else if (result === 'error') {
+        highOrLow.textContent = 'Error: Insert number between 1 and 20';
+        numLives++;
     }
     numLives--;
     if (numLives === 0) {
