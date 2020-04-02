@@ -6,7 +6,7 @@ const compareNumbers = (expected, guessed) => {
         return 0;
     } else if (expected > guessed) {
         return -1;
-    } else if (expected < guessed) {
+    } else {  
         return 1;
     }
 };
