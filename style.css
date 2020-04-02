@@ -1,0 +1,64 @@
+body {
+    background-image: url('https://s7d2.scene7.com/is/image/ritzcarlton/RCARUBA_00081_conversion?$XlargeViewport100pct$');
+}
+
+.container {
+    margin: 100px auto;
+    height: 500px;
+    width: 50%;
+    border: 2px solid black;
+    padding: 20px;
+    background: -webkit-linear-gradient(rgb(245, 183, 90), rgb(231, 175, 123));
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 2px 2px 5px 2px;
+} 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+ul {
+    text-align: left;
+}
+
+input {
+    width: 62px;
+    padding: 7px;
+    margin: 0 auto;
+    display: block;
+}
+
+button {
+    justify-content: center;
+    width: 80px;
+    padding: 7px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+#rules {
+    display: flex;
+    flex-direction: column;
+}
+
+#game {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+}
+
+#number-of-lives {
+    display: inline-block;
+}
+
+#results {
+    text-align: center;
+    padding: 7px;
+    display: none;
+    flex-direction: column;
+}
