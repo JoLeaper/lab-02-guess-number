@@ -32,6 +32,11 @@ submitButton.addEventListener('click', () => {
     let expected = Number(numToGuess);
     let result = compareNumbers(expected, guessed);
 
+    if (guessed > 20 || guessed < 1) {
+        highOrLow.textContent = 'Error: Insert number between 1 and 20';
+        return;
+    }
+
     if (result === 0) {
         gameSection.style.display = 'none';
         resultSection.style.display = 'flex';
@@ -40,9 +45,6 @@ submitButton.addEventListener('click', () => {
         highOrLow.textContent = 'You need to guess lower!';
     } else if (result === -1) {
         highOrLow.textContent = 'You need to guess higher!';
-    } else if (result === 'error') {
-        highOrLow.textContent = 'Error: Insert number between 1 and 20';
-        numLives++;
     }
 
     numLives--;
