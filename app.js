@@ -19,7 +19,7 @@ const winOrLose = document.getElementById('win-or-lose');
 
 // initializing data
 let numLives = 4;
-let numToGuess = Math.floor(Math.random() * (20 - 1)) + 1;
+let numToGuess = Math.floor(Math.random() * (19) + 1);
 
 readyButton.addEventListener('click', () => {
     rulesSection.style.display = 'none';
@@ -29,8 +29,8 @@ readyButton.addEventListener('click', () => {
 submitButton.addEventListener('click', () => {
     let guessed = Number(numberGuessInput.value);
     let expected = Number(numToGuess);
-    console.log(guessed, expected, numLives);
     let result = compareNumbers(expected, guessed);
+
     if (result === 0) {
         gameSection.style.display = 'none';
         resultSection.style.display = 'flex';
@@ -43,42 +43,18 @@ submitButton.addEventListener('click', () => {
         highOrLow.textContent = 'Error: Insert number between 1 and 20';
         numLives++;
     }
+
     numLives--;
+
     if (numLives === 0) {
         gameSection.style.display = 'none';
         resultSection.style.display = 'flex';
         winOrLose.textContent = 'Better luck next time!';
     }
+
     numberOfLives.textContent = numLives;
 });
 
 againButton.addEventListener('click', () => {
     location.reload();
 });
-
-// while (numGuesses > 0) {
-// submitButton.addEventListener('click', () => {
-//         let guessed = numberGuessInput.value;
-//         console.log(guessed, numToGuess);
-//         compareNumbers(guessed, numToGuess);
-//         if (compareNumbers === 'corect') {
-//             numLives.textContent = 'You win!';
-//         } else if (compareNumbers === 'higher') {
-//             numLives.textContent = 'You are too high!';
-//             break;
-//         } else if (compareNumbers === 'lower') {
-//             numLives.textContent = 'You are too low!';
-//             break;
-//         }
-//         numGuesses--;
-//         numLives.textContent = numGuesses;    
-// });
-// }
-
-// againButton.addEventListener('click', () => {
-//     gameSection.style.display = 'flex';
-    
-// });
-
-
-
