@@ -19,11 +19,12 @@ const winOrLose = document.getElementById('win-or-lose');
 
 // initializing data
 let numLives = 4;
-let numToGuess = Math.floor(Math.random() * (19) + 1);
+let numToGuess = 0;
 
 readyButton.addEventListener('click', () => {
     rulesSection.style.display = 'none';
     gameSection.style.display = 'flex';
+    numToGuess = Math.floor(Math.random() * (19) + 1);
 });
 
 submitButton.addEventListener('click', () => {
@@ -56,5 +57,10 @@ submitButton.addEventListener('click', () => {
 });
 
 againButton.addEventListener('click', () => {
-    location.reload();
+    gameSection.style.display = 'flex';
+    resultSection.style.display = 'none';
+    numLives = 4;
+    numberOfLives.textContent = numLives;
+    numToGuess = Math.floor(Math.random() * (19) + 1);
+
 });
