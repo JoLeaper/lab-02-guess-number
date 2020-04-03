@@ -43,7 +43,7 @@ submitButton.addEventListener('click', () => {
         winOrLose.textContent = 'Congratulations, you won!';
     } else if (result === 1) {
         highOrLow.textContent = 'You need to guess lower!';
-    } else if (result === -1) {
+    } else {
         highOrLow.textContent = 'You need to guess higher!';
     }
 
@@ -54,7 +54,6 @@ submitButton.addEventListener('click', () => {
         resultSection.style.display = 'flex';
         winOrLose.textContent = 'Better luck next time!';
     }
-
     numberOfLives.textContent = numLives;
 });
 
@@ -64,5 +63,4 @@ againButton.addEventListener('click', () => {
     numLives = 4;
     numberOfLives.textContent = numLives;
     numToGuess = Math.floor(Math.random() * (19) + 1);
-
 });
