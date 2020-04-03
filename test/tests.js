@@ -9,8 +9,6 @@ test ('compareNumbers', (assert) => {
     const expected3 = 0;
     const expected4 = -1;
     const expected5 = -1;
-    const expected6 = 'error';
-    const expected7 = 'error';
     //Act 
     // Call the function you're testing and set the result to a const
     // Compare numbers takes in (expected, userGuess)
@@ -19,8 +17,6 @@ test ('compareNumbers', (assert) => {
     const answer3 = compareNumbers(10, 10);
     const answer4 = compareNumbers(15, 5);
     const answer5 = compareNumbers(20, 1);
-    const answer6 = compareNumbers(20, 25);
-    const answer7 = compareNumbers(20, -1);
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(answer, expected);
@@ -28,6 +24,4 @@ test ('compareNumbers', (assert) => {
     assert.equal(answer3, expected3);
     assert.equal(answer4, expected4);
     assert.equal(answer5, expected5);
-    assert.equal(answer6, expected6);
-    assert.equal(answer7, expected7);
 });
