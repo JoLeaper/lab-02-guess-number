@@ -19,31 +19,36 @@ const winOrLose = document.getElementById('win-or-lose');
 
 // initializing data
 let numLives = 4;
-let numToGuess = Math.floor(Math.random() * (20 - 1)) + 1;
+let numToGuess = 0;
 
 readyButton.addEventListener('click', () => {
     rulesSection.style.display = 'none';
     gameSection.style.display = 'flex';
+    numToGuess = Math.floor(Math.random() * (19) + 1);
 });
 
 submitButton.addEventListener('click', () => {
     let guessed = Number(numberGuessInput.value);
     let expected = Number(numToGuess);
-    console.log(guessed, expected, numLives);
     let result = compareNumbers(expected, guessed);
+
+    if (guessed > 20 || guessed < 1) {
+        highOrLow.textContent = 'Error: Insert number between 1 and 20';
+        return;
+    }
+
     if (result === 0) {
         gameSection.style.display = 'none';
         resultSection.style.display = 'flex';
         winOrLose.textContent = 'Congratulations, you won!';
     } else if (result === 1) {
         highOrLow.textContent = 'You need to guess lower!';
-    } else if (result === -1) {
+    } else {
         highOrLow.textContent = 'You need to guess higher!';
-    } else if (result === 'error') {
-        highOrLow.textContent = 'Error: Insert number between 1 and 20';
-        numLives++;
     }
+
     numLives--;
+
     if (numLives === 0) {
         gameSection.style.display = 'none';
         resultSection.style.display = 'flex';
@@ -53,32 +58,9 @@ submitButton.addEventListener('click', () => {
 });
 
 againButton.addEventListener('click', () => {
-    location.reload();
+    gameSection.style.display = 'flex';
+    resultSection.style.display = 'none';
+    numLives = 4;
+    numberOfLives.textContent = numLives;
+    numToGuess = Math.floor(Math.random() * (19) + 1);
 });
-
-// while (numGuesses > 0) {
-// submitButton.addEventListener('click', () => {
-//         let guessed = numberGuessInput.value;
-//         console.log(guessed, numToGuess);
-//         compareNumbers(guessed, numToGuess);
-//         if (compareNumbers === 'corect') {
-//             numLives.textContent = 'You win!';
-//         } else if (compareNumbers === 'higher') {
-//             numLives.textContent = 'You are too high!';
-//             break;
-//         } else if (compareNumbers === 'lower') {
-//             numLives.textContent = 'You are too low!';
-//             break;
-//         }
-//         numGuesses--;
-//         numLives.textContent = numGuesses;    
-// });
-// }
-
-// againButton.addEventListener('click', () => {
-//     gameSection.style.display = 'flex';
-    
-// });
-
-
-
